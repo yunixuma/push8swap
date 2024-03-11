@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 22:08:54 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 08:24:33 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # define INDEX_ARG		1
 # define INDEX_LIST		0
 # define INDEX_NONE		-1
+# define FD_INPUT		0
 # define FD_PRINT		1
 # define ERR_OK			0
 # define ERR_NOERR		0
 # define ERR_NOTINT		EDOM
 # define ERR_NOARG		EINVAL
 # define ERR_WRITE		EIO
+# define ERR_READ		EIO
 # define ERR_DUPL		EEXIST
 # define ERR_FAIL		ENOMEM
 # define ID_A			1
@@ -34,7 +36,9 @@
 # define SIZE_ZERO		0
 # define SIZE_CHK		3
 # define SIZE_LARGE		100
+# define BUF_SIZE		4
 # define CHR_DELIM		' '
+# define CHR_NL			'\n'
 # define STR_NL			"\n"
 # define STR_SA			"sa"
 # define STR_SB			"sb"

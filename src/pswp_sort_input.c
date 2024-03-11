@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pswp_sort_bonus.c                                  :+:      :+:    :+:   */
+/*   pswp_sort_input.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 08:23:09 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 08:33:43 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pswp_sort(t_lst **lsts, int status)
+int	pswp_sort_input(t_lst **lsts)
 {
-	// (void)size;
-	lsts[ID_B] = NULL;
-	status = 0;
-	while(!status)
-	{
-		status = pswp_sort_input(lsts);
-		if (status < 0)
-			return (pswp_printerr(status));
-		printf("status: %d\n", status);
-	}
-	if (pswp_sortchk_whole(lsts[ID_A]) > 0)
-		ft_putstr_nl(STR_OK);
-	else
-		ft_putstr_nl(STR_KO);
-	// while (ft_lstsize(lsts[ID_B]) > 0)
-	// 	pswp_oper_pa(lsts);
-	return (ERR_OK);
+	char	buf[BUF_SIZE];
+	int		len_read;
+(void)lsts;
+	len_read = read(FD_INPUT, buf, BUF_SIZE);
+	// if (len_read < 0)
+		return (len_read);
+	if (*(buf + len_read - 1) != CHR_NL)
+		return (EOF);
+	// write(FD_PRINT, buf, len_read);
+	// printf("%d {", len_read);
+	// int i = 0;
+	// while (i < len_read)
+	// {
+	// 	printf("%02x", buf[i]);
+	// 	fflush(stdout);
+	// 	i++;
+	// }
+	// printf("}\n");
+	return (ERR_NOERR);
 }
