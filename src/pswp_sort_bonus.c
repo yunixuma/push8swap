@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   pswp_sort_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 20:30:11 by Yoshihiro K      ###   ########.fr       */
+/*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
+/*   Updated: 2024/03/11 20:31:49 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <errno.h>
-# include <stdbool.h>
-# include "push_swap_const.h"
-# include "push_swap_flag.h"
-# include "push_swap_typedef.h"
+int	pswp_sort(t_lst **lsts, int size)
+{
+	// int		moved;
 
-# ifndef BONUS
-#  include "push_swap_func.h"
-# elif BONUS == 0
-#  include "push_swap_func.h"
-# else
-#  include "push_swap_func_bonus.h"
-# endif
-
-#endif
+	(void)size;
+	lsts[ID_B] = NULL;
+	if (pswp_sortchk_whole(lsts[ID_A]) > 0)
+		return (N_NOMOVE);
+	return (ERR_OK);
+}

@@ -6,13 +6,14 @@
 #    By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#              #
-#    Updated: 2022/11/06 02:27:49 by Yoshihiro K      ###   ########.fr        #
+#    Updated: 2024/03/11 20:50:51 by Yoshihiro K      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ********************** Section for Macros (Variables) ********************** #
 # Product file
 NAME		= push_swap
+BONUS		= checker
 
 # Enumeration of files
 SRCM		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
@@ -34,6 +35,12 @@ SRCM		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
 SRCC		= ft_lstclear.c ft_lstsize.c \
 			  ft_split.c ft_swap.c ft_putstr.c ft_atoi.c \
 			  ft_hasflag.c ft_strncmp.c ft_strlen.c ft_inrange.c
+SRCB		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
+			  pswp_sort_bonus.c \
+			  pswp_sortchk.c pswp_sortchk_three.c \
+			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
+			  pswp_printerr.c \
+			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c
 
 # Enumeration of directories
 SRCDIR		= ./src
@@ -52,8 +59,21 @@ RM			= rm
 
 # Command options (flags)
 CFLAGS		= -MMD -Wall -Wextra -Werror
+DEBUGFLAGS	= -g -ggdb -fsanitize=address \
+			  -fstack-usage -fno-omit-frame-pointer
 INCLUDES	= -I$(INCDIR)
 RMFLAGS		= -rf
+
+# Redefination when the specific target
+ifeq ($(MAKECMDGOALS), bonus)
+	NAME	= $(BONUS)
+	SRCS	= $(addprefix $(SRCDIR)/, $(SRCB)) \
+			  $(addprefix $(SRCDIR)/, $(SRCC))
+endif
+ifeq ($(MAKECMDGOALS), debug)
+	CFLAGS	+= $(DEBUGFLAGS)
+	DEF		= -D DEBUG_MODE=1
+endif
 
 # ********************* Section for targets and commands ********************* #
 # Phonies
@@ -64,8 +84,11 @@ all: $(NAME)
 clean:
 	$(RM) $(RMFLAGS) $(OBJDIR)
 fclean: clean
-	$(RM) $(RMFLAGS) $(NAME)
+	$(RM) $(RMFLAGS) $(NAME) $(BONUS)
 re: fclean $(OBJDIR) all
+
+# Additional targets
+bonus: $(BONUS)
 
 # Recipes
 $(NAME): $(OBJS)
