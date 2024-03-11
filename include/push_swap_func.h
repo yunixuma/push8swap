@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 20:28:48 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/11 22:03:08 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ char	**ft_split(char const *s, char c);
 char	**ft_split_free(char **arr, size_t n);
 void	ft_swap_int(int *m, int *n);
 int		ft_putstr(const char *s);
+int		ft_putstr_nl(const char *s);
 int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_inrange(int nb, int left, int right);

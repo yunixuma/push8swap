@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	ft_putstrn(const char *s, ssize_t len)
+static ssize_t	ft_putstrn(const char *s, ssize_t len)
 {
 	ssize_t	ret;
 
@@ -44,4 +44,14 @@ int	ft_putstr(const char *s)
 	if (len != ft_putstrn(s, len))
 		return (ERR_WRITE);
 	return (ERR_NOERR);
+}
+
+int	ft_putstr_nl(const char *s)
+{
+	ssize_t	status;
+
+	status = ft_putstr(s);
+	if (status == ERR_NOERR)
+		status = ft_putstr(STR_NL);
+	return (status);
 }

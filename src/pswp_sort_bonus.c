@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 20:31:49 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/11 22:07:42 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int	pswp_sort(t_lst **lsts, int size)
 {
-	// int		moved;
-
 	(void)size;
 	lsts[ID_B] = NULL;
+
 	if (pswp_sortchk_whole(lsts[ID_A]) > 0)
-		return (N_NOMOVE);
+		ft_putstr_nl(STR_OK);
+	else
+		ft_putstr_nl(STR_KO);
+	// while (ft_lstsize(lsts[ID_B]) > 0)
+	// 	pswp_oper_pa(lsts);
 	return (ERR_OK);
 }

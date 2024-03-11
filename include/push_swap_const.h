@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/31 18:41:40 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/11 22:08:54 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,21 @@
 # define SIZE_CHK		3
 # define SIZE_LARGE		100
 # define CHR_DELIM		' '
-# define STR_SA			"sa\n"
-# define STR_SB			"sb\n"
-# define STR_SS			"ss\n"
-# define STR_PA			"pa\n"
-# define STR_PB			"pb\n"
-# define STR_RA			"ra\n"
-# define STR_RB			"rb\n"
-# define STR_RR			"rr\n"
-# define STR_RRA		"rra\n"
-# define STR_RRB		"rrb\n"
-# define STR_RRR		"rrr\n"
-# define STR_ERR		"Error\n"
+# define STR_NL			"\n"
+# define STR_SA			"sa"
+# define STR_SB			"sb"
+# define STR_SS			"ss"
+# define STR_PA			"pa"
+# define STR_PB			"pb"
+# define STR_RA			"ra"
+# define STR_RB			"rb"
+# define STR_RR			"rr"
+# define STR_RRA		"rra"
+# define STR_RRB		"rrb"
+# define STR_RRR		"rrr"
+# define STR_OK			"OK"
+# define STR_KO			"KO"
+# define STR_ERR		"Error"
 # define STR_NOTERR		""
 # define STR_INTMAX		"2147483647"
 # define STR_INTMIN		"2147483648"
