@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_sort_input.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 15:03:32 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 18:46:15 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	pswp_sort_input_oper(t_lst **lsts, char buf[BUF_SIZE])
 {
-	// printf("%02x%02x%02x%02x\n", buf[0], buf[1], buf[2], buf[3]);
+	// printf("%02x%02x %02x%02x\n", buf[0], buf[1], buf[2], buf[3]);
 	if (ft_strncmp(buf, STR_SA, BUF_SIZE) == 0)
 		pswp_oper_sx(lsts, ID_A);
 	else if (ft_strncmp(buf, STR_SB, BUF_SIZE) == 0)
@@ -66,25 +66,36 @@ static int	pswp_sort_input_oper(t_lst **lsts, int flag)
 */
 int	pswp_sort_input(t_lst **lsts)
 {
-	char		buf[BUF_SIZE];
-	int			len_read;
+	char		*line;
+	// char		buf[BUF_SIZE];
+	// int			len_read;
 	// int			flag_oper;
-	static int	prev_status = ERR_NOERR;
+	// static int	prev_status = ERR_NOERR;
+	int			status;
 
-	len_read = read(FD_INPUT, buf, BUF_SIZE);
-	if (len_read < 0)
-		return (pswp_print_err(ERR_READ));
-	else if (len_read == 0)
+	line = get_next_line(FD_INPUT);
+	// len_read = read(FD_INPUT, buf, BUF_SIZE);
+	// if (len_read < 0)
+	// 	return (pswp_print_err(ERR_READ));
+	// else if (len_read == 0)
+	if (line == NULL)
 	{
-		if (prev_status == ERR_INPUT)
-			return (pswp_print_err(ERR_INPUT));
+		// if (prev_status == ERR_INPUT)
+		// 	return (pswp_print_err(ERR_INPUT));
 		return (-ERR_READ);
 	}
-	else if (*(buf + len_read - 1) != CHR_NL)
-		prev_status = ERR_INPUT;
-	if (prev_status == ERR_INPUT)
-		return (ERR_INPUT);
-	*(buf + len_read - 1) = CHR_NUL;
+	else if (line[0] == CHR_NUL)
+	{
+		free(line);
+		return (-ERR_READ);
+	}
+	*(line + ft_strlen(line) - 1) = CHR_NUL;
+	// else if (*(buf + len_read - 1) != CHR_NL)
+	// {
+		// prev_status = ERR_INPUT;}
+	// if (prev_status == ERR_INPUT)
+		// return (ERR_INPUT);
+	// *(buf + len_read - 1) = CHR_NUL;
 	// write(FD_PRINT, buf, len_read);
 	// printf("%d {", len_read);
 	// int i = 0;
@@ -98,7 +109,10 @@ int	pswp_sort_input(t_lst **lsts)
 	// flag_oper = pswp_sort_input_classify(lsts, buf);
 	// if (pswp_sort_input_oper(lsts, flag_oper))
 	// 	return (pswp_print_err(ERR_INPUT));
-	if (pswp_sort_input_oper(lsts, buf))
-		return (pswp_print_err(ERR_INPUT));
-	return (ERR_NOERR);
+	// if (pswp_sort_input_oper(lsts, buf))
+	// 	return (pswp_print_err(ERR_INPUT));
+	// return (ERR_NOERR);
+	status = pswp_sort_input_oper(lsts, line);
+	free(line);
+	return (pswp_print_err(status));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_func_bonus.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 14:56:54 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 18:43:32 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_FUNC_BONUS_H
 
 # include <stdio.h>
+# include "get_next_line.h"
 
 int		pswp_argchk(char **args);
 char	**pswp_arg2arr(int argc, char *argv[]);
@@ -49,5 +50,6 @@ int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_inrange(int nb, int left, int right);
 size_t	ft_strlen(const char *str);
+char    *get_next_line(int fd);
 
 #endif

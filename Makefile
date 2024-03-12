@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+         #
+#    By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#              #
-#    Updated: 2024/03/12 14:59:09 by Yoshihiro K      ###   ########.fr        #
+#    Updated: 2024/03/12 18:41:58 by ykosaka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRCB		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
 			  pswp_sortchk.c pswp_sortchk_three.c \
 			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
 			  pswp_print_err.c pswp_print_oper_bonus.c \
-			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c
+			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c \
+			  get_next_line.c get_next_line_utils.c
 SRCD		= debug_pswp.c debug_common.c
 
 # Enumeration of directories

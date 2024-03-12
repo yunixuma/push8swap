@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_const.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 13:34:33 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 18:20:35 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # define INDEX_ARG		1
 # define INDEX_LIST		0
 # define INDEX_NONE		-1
-# define FD_INPUT		0
-# define FD_PRINT		1
+# define FD_INPUT		STDIN_FILENO
+# define FD_PRINT		STDOUT_FILENO
 # define ERR_OK			0
 # define ERR_NOERR		0
 # define ERR_NOTINT		EDOM
