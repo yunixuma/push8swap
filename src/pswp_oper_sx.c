@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 22:02:00 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 14:55:30 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ void	pswp_oper_ss(t_lst **lsts)
 {
 	pswp_oper_swap(lsts, ID_A);
 	pswp_oper_swap(lsts, ID_B);
-	ft_putstr_nl(STR_SS);
+	pswp_print_oper(STR_SS);
 }
 
 void	pswp_oper_sx(t_lst **lsts, int lst_id)
 {
 	pswp_oper_swap(lsts, lst_id);
 	if (lst_id == ID_A)
-		ft_putstr_nl(STR_SA);
+		pswp_print_oper(STR_SA);
 	else
-		ft_putstr_nl(STR_SB);
+		pswp_print_oper(STR_SB);
 }
 
 void	pswp_oper_cosx(t_lst **lsts, int lst_id)

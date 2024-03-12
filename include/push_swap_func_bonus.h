@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/11 23:42:31 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 14:56:54 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int		pswp_oper_corx(t_lst **lsts, int lst_id, int lower, int upper);
 int		pswp_oper_rrx(t_lst **lsts, int lst_id);
 int		pswp_oper_rrr(t_lst **lsts);
 int		pswp_oper_corrx(t_lst **lsts, int lst_id, int lower, int upper);
-int		pswp_printerr(int status);
+int		pswp_print_err(int status);
+int		pswp_print_oper(const char *s);
 t_lst	*pswp_lstnew(int num);
 void	pswp_lstadd_next(t_lst *last, t_lst *new);
 void	pswp_lstclear(t_lst **lsts);

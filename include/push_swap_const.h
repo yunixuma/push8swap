@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 08:24:33 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 13:34:33 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define ERR_NOERR		0
 # define ERR_NOTINT		EDOM
 # define ERR_NOARG		EINVAL
+# define ERR_INPUT		EINVAL
 # define ERR_WRITE		EIO
 # define ERR_READ		EIO
 # define ERR_DUPL		EEXIST
@@ -37,6 +38,7 @@
 # define SIZE_CHK		3
 # define SIZE_LARGE		100
 # define BUF_SIZE		4
+# define CHR_NUL		'\0'
 # define CHR_DELIM		' '
 # define CHR_NL			'\n'
 # define STR_NL			"\n"

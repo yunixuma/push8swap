@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/27 22:44:22 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/12 14:49:44 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ int	main(int argc, char *argv[])
 	if (args == NULL || *args == NULL)
 	{
 		ft_split_free(args, INT_MAX);
-		exit (pswp_printerr(ERR_NOARG));
+		exit (pswp_print_err(ERR_NOARG));
 	}
 	size = pswp_argchk(args);
 	if (size < 0)
-		exit (pswp_printerr(-size));
+		exit (pswp_print_err(-size));
 	lsts[ID_A] = pswp_stackinit(args);
 	if (argc == INDEX_ARG + 1)
 		ft_split_free(args, INT_MAX);
 	else
 		free(args);
 	if (lsts[ID_A] == NULL)
-		exit (pswp_printerr(ERR_DUPL));
+		exit (pswp_print_err(ERR_DUPL));
 	pswp_sort(lsts, size);
 	pswp_lstclear(lsts);
 	exit (0);

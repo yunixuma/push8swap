@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   debug_common.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 09:19:06 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2022/10/30 13:31:11 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef DEBUG_COMMON_H
+# define DEBUG_COMMON_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <errno.h>
-# include <stdbool.h>
-# include "push_swap_const.h"
-# include "push_swap_flag.h"
-# include "push_swap_typedef.h"
+# include <stdio.h>
+# include <stdarg.h>
 
-# ifndef BONUS
-#  define BONUS 0
-# endif
-# if BONUS == 0
-#  include "push_swap_func.h"
+# define FD_DEBUG		2
+# ifndef DEBUG_MODE
+#  define DEBUG_MODE	0
+#  define debug_printf(...) debug_dummy(__VA_ARGS__)
 # else
-#  include "push_swap_func_bonus.h"
+#  define debug_printf(...) dprintf(FD_DEBUG, __VA_ARGS__)
 # endif
 
-# ifdef DEBUG_MODE
-#  include "debug_push_swap.h"
-# endif
+int		debug_dummy(const char *format, ...);
 
 #endif
