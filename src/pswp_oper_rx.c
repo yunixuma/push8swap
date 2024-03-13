@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_oper_rx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 14:55:29 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/13 20:42:27 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	pswp_oper_rotate(t_lst **lsts, int lst_id)
 {
+	if (lsts[lst_id] == NULL || lsts[lst_id]->next == NULL)
+		return ;
 	lsts[lst_id] = lsts[lst_id]->next;
 }
 
