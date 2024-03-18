@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/24 00:38:49 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/18 15:16:34 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	**pswp_arg2arr(int argc, char *argv[])
 	if (size == 1)
 		return (ft_split(argv[INDEX_ARG], CHR_DELIM));
 	args = (char **)malloc((size + 1) * sizeof(char **));
+	if (args == NULL)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{

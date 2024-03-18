@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:44:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/27 22:38:05 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/18 15:16:11 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static char	*ft_split_setstr(char const *s, char c)
 	while (*(s + len) != c && *(s + len) != '\0')
 		len++;
 	frag = (char *)malloc((len + 1) * sizeof(char));
+	if (frag == NULL)
+		return (NULL);
 	if (frag == NULL)
 		return (NULL);
 	while (k < len)
