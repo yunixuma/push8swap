@@ -6,7 +6,7 @@
 /*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/18 20:44:58 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/18 20:46:46 by Yoshihiro K      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	pswp_sort(t_lst **lsts, int status)
 {
 	lsts[ID_B] = NULL;
 	status = ERR_NOERR;
-	while(!status)
+	while (!status)
 	{
 		// pswp_debug_print_lsts(lsts);
 		status = pswp_sort_input(lsts);
