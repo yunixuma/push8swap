@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ykosaka <ykosaka@student.42.fr>            +#+  +:+       +#+         #
+#    By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#              #
-#    Updated: 2024/03/12 19:16:08 by ykosaka          ###   ########.fr        #
+#    Updated: 2024/03/28 05:32:43 by ykosaka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,13 @@ SRCM		= pswp_sort.c pswp_sort_le6.c pswp_sort_gt6.c \
 			  pswp_search_max.c pswp_search_min.c \
 			  pswp_search_le.c pswp_search_gt.c  pswp_search_range.c \
 			  pswp_print_oper.c \
-			  ft_lstsize.c ft_swap.c ft_hasflag.c
+			  ft_swap.c ft_hasflag.c
 SRCC		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
 			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
 			  pswp_sortchk.c pswp_print_err.c \
 			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c \
-			  ft_lstclear.c ft_split.c ft_putstr.c ft_atoi.c \
-			  ft_strncmp.c ft_strlen.c ft_inrange.c
+			  ft_lstclear.c ft_lstsize.c ft_split.c ft_putstr.c \
+			  ft_atoi.c ft_strncmp.c ft_strlen.c ft_inrange.c
 SRCB		= pswp_sort_bonus.c pswp_sort_input.c pswp_print_oper_bonus.c \
   			  get_next_line.c get_next_line_utils.c
 SRCD		= debug_pswp.c debug_common.c
