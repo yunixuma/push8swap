@@ -16,32 +16,27 @@ NAME		= push_swap
 BONUS		= checker
 
 # Enumeration of files
-SRCM		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
-			  pswp_sort.c pswp_sort_le6.c pswp_sort_gt6.c \
+SRCM		= pswp_sort.c pswp_sort_le6.c pswp_sort_gt6.c \
 			  pswp_nodeinit.c pswp_nodeclear.c pswp_nodeseek.c pswp_nodeupd.c \
 			  pswp_nodenew_a.c pswp_nodenew_b.c pswp_nodenew_set.c \
 			  pswp_sort_three.c pswp_sort_three_a.c pswp_sort_three_b.c \
 			  pswp_div_a_whole.c pswp_div_a_top.c pswp_div_a_bottom.c \
 			  pswp_div_b_whole.c pswp_div_b_top.c pswp_div_b_bottom.c \
-			  pswp_sortchk.c pswp_sortchk_three.c \
-			  pswp_sortchk_range.c pswp_sortchk_co.c \
+			  pswp_sortchk_three.c pswp_sortchk_range.c pswp_sortchk_co.c \
 			  pswp_cmp.c pswp_cmp_dawt.c \
 			  pswp_calc_pivot.c pswp_calc_size.c  pswp_calc_bias.c \
 			  pswp_search_max.c pswp_search_min.c \
 			  pswp_search_le.c pswp_search_gt.c  pswp_search_range.c \
+			  pswp_print_oper.c \
+			  ft_lstsize.c ft_swap.c ft_hasflag.c
+SRCC		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
 			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
-			  pswp_print_err.c pswp_print_oper.c \
-			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c
-SRCC		= ft_lstclear.c ft_lstsize.c \
-			  ft_split.c ft_swap.c ft_putstr.c ft_atoi.c \
-			  ft_hasflag.c ft_strncmp.c ft_strlen.c ft_inrange.c
-SRCB		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
-			  pswp_sort_bonus.c pswp_sort_input.c \
-			  pswp_sortchk.c pswp_sortchk_three.c \
-			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
-			  pswp_print_err.c pswp_print_oper_bonus.c \
+			  pswp_sortchk.c pswp_print_err.c \
 			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c \
-			  get_next_line.c get_next_line_utils.c
+			  ft_lstclear.c ft_split.c ft_putstr.c ft_atoi.c \
+			  ft_strncmp.c ft_strlen.c ft_inrange.c
+SRCB		= pswp_sort_bonus.c pswp_sort_input.c pswp_print_oper_bonus.c \
+  			  get_next_line.c get_next_line_utils.c
 SRCD		= debug_pswp.c debug_common.c
 
 # Enumeration of directories
