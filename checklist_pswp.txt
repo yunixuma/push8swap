@@ -1,0 +1,48 @@
+# test cases
+## norme
+norminette | grep -v OK
+
+## compilation
+make
+make
+make re
+make clean
+
+## funcs
+nm -u push_swap
+
+## no args
+./push_swap
+
+## empty string only
+./push_swap ""
+## empty string w/
+./push_swap 1 ""
+./push_swap 2 "" 1
+
+## w/ white space
+./push_swap " 1"
+./push_swap " 2 "
+
+## duplicates
+./push_swap 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 29
+
+## over int type
+./push_swap 2147483648
+./push_swap 21474836470
+./push_swap -2147483649
+./push_swap -21474836480
+
+## nafuka's tester
+git clone https://github.com/nafuka11/push_swap_tester.git pst
+curl https://***.***.42.fr/***/***/***/checker_Mac > ./checker
+cd pst
+python3 push_swap_tester.py
+python3 push_swap_tester.py -l 100 -c 500
+python3 push_swap_tester.py -l 500 -c 500
+
+# checking code
+- return value of malloc()
+- memory leaks
+- NULL guard in swap, rotate and rev-rotate operations
+- 
