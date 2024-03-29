@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_sort_gt6.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/31 02:20:10 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/29 19:56:33 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	pswp_sort_gt6(t_lst **lsts, int size)
 		else
 			moved = pswp_sort_gt6_b(lsts, nodes, idx);
 		idx = pswp_nodeseek_todiv(nodes);
+		if (pswp_sortchk_whole(lsts[ID_A]) > 0 && lsts[ID_B] == NULL)
+			break ;
 	}
 	pswp_nodeclear(nodes);
 	return (moved);
