@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_cmp_dawt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/31 03:56:24 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/30 23:19:20 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

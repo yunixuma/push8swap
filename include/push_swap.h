@@ -6,7 +6,7 @@
 /*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:03:00 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 18:14:16 by ykosaka          ###   ########.fr       */
+/*   Updated: 2024/03/30 17:42:02 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-// # include <stdio.h>
+# include <stdio.h>
 # include <limits.h>
 # include <errno.h>
 # include <stdbool.h>

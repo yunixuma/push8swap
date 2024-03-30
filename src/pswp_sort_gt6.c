@@ -6,7 +6,7 @@
 /*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/29 19:56:33 by ykosaka          ###   ########.fr       */
+/*   Updated: 2024/03/31 00:53:09 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	pswp_sort_gt6_a(t_lst **lsts, t_node **nodes, ssize_t idx)
 {
 	int	(*pf)(t_lst **, t_node **, ssize_t);
 	int	moved;
-
+// dprintf(STDERR_FILENO, "%s:%d idx: %ld\n", __FILE__, __LINE__, idx);
 	if (nodes[idx]->pos == pswp_nodeseek_top(nodes, ID_A))
 	{
 		if (nodes[idx]->pos == pswp_nodeseek_bottom(nodes, ID_A))
@@ -26,7 +26,9 @@ static int	pswp_sort_gt6_a(t_lst **lsts, t_node **nodes, ssize_t idx)
 	}
 	else
 		pf = pswp_div_a_bottom;
+// dprintf(STDERR_FILENO, "%s:%d func: %p\n", __FILE__, __LINE__, pf);
 	moved = (*pf)(lsts, nodes, idx);
+// dprintf(STDERR_FILENO, "%s:%d moved: %d\n", __FILE__, __LINE__, moved);
 	if (nodes[idx]->size <= SIZE_CHK)
 		pswp_nodeupd_fix(nodes, idx);
 	else
@@ -38,7 +40,7 @@ static int	pswp_sort_gt6_b(t_lst **lsts, t_node **nodes, ssize_t idx)
 {
 	int	(*pf)(t_lst **, t_node **, ssize_t);
 	int	moved;
-
+// dprintf(STDERR_FILENO, "%s:%d idx: %ld\n", __FILE__, __LINE__, idx);
 	if (nodes[idx]->pos == pswp_nodeseek_top(nodes, ID_B))
 	{
 		if (nodes[idx]->pos == pswp_nodeseek_bottom(nodes, ID_B))
@@ -73,6 +75,7 @@ int	pswp_sort_gt6(t_lst **lsts, int size)
 			moved = pswp_sort_gt6_a(lsts, nodes, idx);
 		else
 			moved = pswp_sort_gt6_b(lsts, nodes, idx);
+// dprintf(STDERR_FILENO, "%s:%d idx: %ld\n", __FILE__, __LINE__, idx);
 		idx = pswp_nodeseek_todiv(nodes);
 		if (pswp_sortchk_whole(lsts[ID_A]) > 0 && lsts[ID_B] == NULL)
 			break ;

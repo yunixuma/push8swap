@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_print_oper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 14:58:17 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/31 00:55:48 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 int	pswp_print_oper(const char *s)
 {
-	return (ft_putstr_nl(s));
+	// static int	limit = 150;
+// 	if (limit)
+// 	{
+// dprintf(STDERR_FILENO, "%s:%d limit: %d\n", __FILE__, __LINE__, limit);
+// 		limit--;
+		return (ft_putstr_nl(s));
+	// }
+	// return (0);
 }

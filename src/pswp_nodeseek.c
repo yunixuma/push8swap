@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_nodeseek.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/29 16:57:31 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/31 00:55:34 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ ssize_t	pswp_nodeseek_todiv(t_node **nodes)
 	i = 0;
 	while (nodes[i] != NULL)
 	{
+		// printf("nodes[%ld]->fixed: %d\n", i, nodes[i]->fixed);
 		if (!nodes[i]->fixed && nodes[i]->key > max)
 		{
 			i_max = i;

@@ -6,7 +6,7 @@
 #    By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#              #
-#    Updated: 2024/03/28 05:32:43 by ykosaka          ###   ########.fr        #
+#    Updated: 2024/03/30 19:04:08 by ykosaka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ endif
 ifeq ($(MAKECMDGOALS), debug)
 	CFLAGS	+= $(DEBUGFLAGS)
 	DEF		+= -D DEBUG_MODE=1
+	SRCS	+= $(addprefix $(SRCDIR)/, $(SRCD))
 endif
 
 # Macros to replace and/or integrate #2

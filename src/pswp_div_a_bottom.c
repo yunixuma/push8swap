@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_div_a_bottom.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2022/10/31 02:26:47 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/03/31 00:49:07 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	pswp_div_a_bottom(t_lst **lsts, t_node **nodes, ssize_t idx)
 {
 	int	size;
 	int	pivot;
-
+// dprintf(STDERR_FILENO, "%s:%d idx: %ld\n", __FILE__, __LINE__, idx);
 	size = nodes[idx]->size;
 	if (size <= SIZE_ZERO)
 		size = ft_lstsize(lsts[ID_B]);
