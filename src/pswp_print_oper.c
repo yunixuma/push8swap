@@ -19,7 +19,7 @@ int	pswp_print_oper(const char *s)
 // 	{
 // dprintf(STDERR_FILENO, "%s:%d limit: %d\n", __FILE__, __LINE__, limit);
 // 		limit--;
-		return (ft_putstr_nl(s));
+	return (ft_putstr_nl_fd(s, FD_PRINT));
 	// }
 	// return (0);
 }

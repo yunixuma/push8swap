@@ -18,6 +18,7 @@
 # define INDEX_NONE		-1
 # define FD_INPUT		STDIN_FILENO
 # define FD_PRINT		STDOUT_FILENO
+# define FD_ERROR		STDERR_FILENO
 # define ERR_OK			0
 # define ERR_NOERR		0
 # define ERR_NOTINT		EDOM

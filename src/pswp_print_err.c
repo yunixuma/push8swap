@@ -15,7 +15,7 @@
 int	pswp_print_err(int status)
 {
 	if (status != ERR_NOERR)
-		ft_putstr_nl(STR_ERR);
+		ft_putstr_nl_fd(STR_ERR, FD_ERROR);
 	// else
 	// 	ft_putstr_nl(STR_NOTERR);
 	return (status);

@@ -24,9 +24,9 @@ int	pswp_sort(t_lst **lsts, int status)
 			return (status);
 	}
 	if (pswp_sortchk_whole(lsts[ID_A]) > 0 && lsts[ID_B] == NULL)
-		ft_putstr_nl(STR_OK);
+		ft_putstr_nl_fd(STR_OK, FD_PRINT);
 	else
-		ft_putstr_nl(STR_KO);
+		ft_putstr_nl_fd(STR_KO, FD_PRINT);
 	// while (ft_lstsize(lsts[ID_B]) > 0)
 	// 	pswp_oper_pa(lsts);
 	return (ERR_OK);

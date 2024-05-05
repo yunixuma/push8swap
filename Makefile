@@ -33,7 +33,7 @@ SRCC		= pswp_main.c pswp_arg2arr.c pswp_argchk.c pswp_stackinit.c \
 			  pswp_oper_px.c pswp_oper_sx.c pswp_oper_rx.c pswp_oper_rrx.c \
 			  pswp_sortchk.c pswp_print_err.c \
 			  pswp_lstnew.c pswp_lstadd_next.c pswp_lstclear.c \
-			  ft_lstclear.c ft_lstsize.c ft_split.c ft_putstr.c \
+			  ft_lstclear.c ft_lstsize.c ft_split.c ft_putstr_fd.c \
 			  ft_atoi.c ft_strncmp.c ft_strlen.c ft_inrange.c
 SRCB		= pswp_sort_bonus.c pswp_sort_input.c pswp_print_oper_bonus.c \
   			  get_next_line.c get_next_line_utils.c

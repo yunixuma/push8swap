@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static ssize_t	ft_putstrn(const char *s, ssize_t len)
+static ssize_t	ft_putstrn_fd(const char *s, ssize_t len, int fd)
 {
 	ssize_t	ret;
 
@@ -26,32 +26,32 @@ static ssize_t	ft_putstrn(const char *s, ssize_t len)
 	ret = 0;
 	while (len > INT_MAX)
 	{
-		ret += write(FD_PRINT, s, INT_MAX);
+		ret += write(fd, s, INT_MAX);
 		s += INT_MAX;
 		len -= INT_MAX;
 	}
-	ret += write(FD_PRINT, s, len);
+	ret += write(fd, s, len);
 	return (ret);
 }
 
-int	ft_putstr(const char *s)
+int	ft_putstr_fd(const char *s, int fd)
 {
 	ssize_t	len;
 
 	if (s == NULL)
 		return (0);
 	len = ft_strlen(s);
-	if (len != ft_putstrn(s, len))
+	if (len != ft_putstrn_fd(s, len, fd))
 		return (ERR_WRITE);
 	return (ERR_NOERR);
 }
 
-int	ft_putstr_nl(const char *s)
+int	ft_putstr_nl_fd(const char *s, int fd)
 {
 	ssize_t	status;
 
-	status = ft_putstr(s);
+	status = ft_putstr_fd(s, fd);
 	if (status == ERR_NOERR)
-		status = ft_putstr(STR_NL);
+		ft_putstr_fd(STR_NL, fd);
 	return (status);
 }
