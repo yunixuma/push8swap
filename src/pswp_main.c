@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yoshihiro Kosaka <ykosaka@student.42tok    +#+  +:+       +#+        */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/03/12 14:49:44 by Yoshihiro K      ###   ########.fr       */
+/*   Updated: 2024/11/19 06:53:30 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,15 @@ int	main(int argc, char *argv[])
 		exit (ERR_NOERR);
 	args = pswp_arg2arr(argc, argv);
 	if (args == NULL || *args == NULL)
-	{
-		ft_split_free(args, INT_MAX);
 		exit (pswp_print_err(ERR_NOARG));
-	}
 	size = pswp_argchk(args);
-	if (size < 0)
-		exit (pswp_print_err(-size));
 	lsts[ID_A] = pswp_stackinit(args);
 	if (argc == INDEX_ARG + 1)
 		ft_split_free(args, INT_MAX);
 	else
 		free(args);
+	if (size < 0) 
+		exit (pswp_print_err(-size));
 	if (lsts[ID_A] == NULL)
 		exit (pswp_print_err(ERR_DUPL));
 	pswp_sort(lsts, size);
