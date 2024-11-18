@@ -6,7 +6,7 @@
 /*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:04:04 by ykosaka           #+#    #+#             */
-/*   Updated: 2024/11/19 06:53:30 by ykosaka          ###   ########.fr       */
+/*   Updated: 2024/11/19 07:06:09 by ykosaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ __attribute__((destructor))
 		system("leaks -q push_swap");
 }
 */
+
+static void	pswp_freeargs(int argc, char **args)
+{
+	if (argc == INDEX_ARG + 1)
+		ft_split_free(args, INT_MAX);
+	else
+		free(args);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -31,13 +39,12 @@ int	main(int argc, char *argv[])
 	if (args == NULL || *args == NULL)
 		exit (pswp_print_err(ERR_NOARG));
 	size = pswp_argchk(args);
-	lsts[ID_A] = pswp_stackinit(args);
-	if (argc == INDEX_ARG + 1)
-		ft_split_free(args, INT_MAX);
-	else
-		free(args);
-	if (size < 0) 
+	if (size < 0) {
+		pswp_freeargs(argc, args);
 		exit (pswp_print_err(-size));
+	}
+	lsts[ID_A] = pswp_stackinit(args);
+	pswp_freeargs(argc, args);
 	if (lsts[ID_A] == NULL)
 		exit (pswp_print_err(ERR_DUPL));
 	pswp_sort(lsts, size);
